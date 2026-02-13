@@ -5,7 +5,7 @@ import { RegistrationComponent } from './registration/registration.component';
 
 const routes: Routes = [
   {
-    path : 'home ' ,
+    path : 'home' ,
     component : HomeComponent
   },
   {
