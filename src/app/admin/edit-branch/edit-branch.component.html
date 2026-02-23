@@ -1,0 +1,18 @@
+<h2>Edit Branch</h2>
+
+<form [formGroup]="branchForm" (ngSubmit)="updateBranch()">
+
+  <input type="text" formControlName="branchName" placeholder="Branch Name">
+  <input type="text" formControlName="city" placeholder="City">
+  <input type="text" formControlName="address" placeholder="Address">
+  <input type="number" formControlName="rating" placeholder="Rating">
+  <input type="text" formControlName="phone" placeholder="Phone">
+  <input type="text" formControlName="imgUrl" placeholder="Image URL">
+  <input type="number" formControlName="hotelId" placeholder="Hotel ID">
+  <input type="email" formControlName="email" placeholder="Email">
+
+  <button type="submit" > 
+    Update Branch
+  </button>
+
+</form>

@@ -1,1 +1,20 @@
-<p>dashboard works!</p>
+<h2>Admin Dashboard</h2>
+
+<div style="display:flex; gap:10px; flex-wrap:wrap;">
+
+  <button routerLink="/admin/add-hotel">Add Hotel</button>
+  <button routerLink="/admin/hotels">Hotel List</button>
+
+  <button routerLink="/admin/add-branch">Add Branch</button>
+  <button routerLink="/admin/branches">Branch List</button>
+
+  <button routerLink="/admin/add-room">Add Room</button>
+  <button routerLink="/admin/rooms">Room List</button>
+
+</div>
+
+<hr>
+
+
+
+<router-outlet></router-outlet>

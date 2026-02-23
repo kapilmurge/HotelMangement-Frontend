@@ -1,1 +1,18 @@
-<p>booking-history works!</p>
+<h2>My Bookings</h2>
+
+<table border="3" >
+  <tr>
+    <th>BookingID</th>
+    <th>Check In</th>
+    <th>Check Out</th>
+    <th>Status</th>
+  </tr>
+
+  <tr *ngFor="let booking of bookings">
+    <td>{{ booking.id }}</td>
+    <td>{{ booking.checkInDate }}</td>
+    <td>{{ booking.checkOutDate }}</td>
+    <td>{{ booking.status }}</td>
+  </tr>
+</table>
+

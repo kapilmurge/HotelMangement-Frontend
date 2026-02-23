@@ -1,17 +1,7 @@
-<p>App Works!</p>
+<app-navbar></app-navbar>
 
-<!-- <app-home> </app-home>                         This is where the home component is being used in the app component.  
-                                                  The home component will display the message "home works!" when it is rendered. -->
+<div style="padding:20px; min-height:80vh;">
+  <router-outlet></router-outlet>
+</div>
 
-    <!-- This is where the registration component is being used in the app component. 
-                                                  The registration component will display the message "registration works!" when it is rendered. -->
-            
-
-
-<nav>
-    <a routerLink="/home">Home</a>   
-    <br>
-    <a routerLink="/registration">Registration</a> 
-</nav>
-
-<router-outlet> </router-outlet>
+<app-footer></app-footer>

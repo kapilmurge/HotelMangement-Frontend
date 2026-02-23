@@ -1,1 +1,50 @@
-<p>registration works!</p>
+<h2>Register</h2>
+
+<form [formGroup]="registrationForm" (ngSubmit)="register()">
+
+  <input type="text" formControlName="name" placeholder="Full Name">
+  <div *ngIf="registrationForm.controls.name.invalid && registrationForm.controls.name.touched">
+    Name is required
+  </div>
+
+  <input type="email" formControlName="email" placeholder="Email" >
+  <div *ngIf="registrationForm.controls.email.invalid && registrationForm.controls.email.touched">
+    <small *ngIf="registrationForm.controls.email.errors?.['required']">
+      Email is required
+    </small>
+    <small *ngIf="registrationForm.controls.email.errors?.['email']">
+      Invalid Email format
+    </small>
+  </div>
+
+  <input type="password" formControlName="password" placeholder="Password">
+  <div *ngIf="registrationForm.controls.password.invalid && registrationForm.controls.password.touched">
+    <small *ngIf="registrationForm.controls.password.errors?.['required']">
+      Password is required
+    </small>
+    <small *ngIf="registrationForm.controls.password.errors?.['minlength']">
+      Minimum 6 characters required
+    </small>
+    <small *ngIf="registrationForm.controls.password.errors?.['pattern']">
+      Must contain uppercase, lowercase & number
+    </small>
+  </div>
+
+  <input type="text" formControlName="phone" placeholder="Phone Number">
+  <div *ngIf="registrationForm.controls.phone.invalid && registrationForm.controls.phone.touched">
+    Phone number is required
+  </div>
+
+  <select formControlName="role">
+    <option value="CUSTOMER">Customer</option>
+    <option value="ADMIN">Admin</option>
+  </select>
+
+  <button type="submit" [disabled]="registrationForm.invalid">Register</button>
+
+</form>
+
+<p>
+  Already have account?
+  <a routerLink="/login">Login</a>
+</p>

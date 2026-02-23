@@ -1,0 +1,24 @@
+<h2>Hotel List</h2>
+
+<table border="1">
+  <tr>
+    <th>ID</th>
+    <th>Name</th>
+    <th>Description</th>
+    <th>Email</th>
+    <th>Created At</th>
+    <th>Action</th>
+  </tr>
+
+  <tr *ngFor="let hotel of hotels">
+    <td>{{ hotel.id }}</td>
+    <td>{{ hotel.name }}</td>
+    <td>{{ hotel.description }}</td>
+    <td>{{ hotel.email }}</td>
+    <td>{{ hotel.createdAt}}</td>
+    <td>
+      <button (click)="editHotel(hotel.id)">Edit</button>
+      <button (click)="deleteHotel(hotel.id)">Delete</button>
+    </td>
+  </tr>
+</table>

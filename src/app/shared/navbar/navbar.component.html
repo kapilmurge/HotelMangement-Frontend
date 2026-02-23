@@ -1,1 +1,32 @@
-<p>navbar works!</p>
+<mat-toolbar color="primary">
+
+  <span style="font-weight:600;">Hotel Management</span>
+
+  <span class="spacer"></span>
+
+  <ng-container *ngIf="user; else guestLinks">
+
+    <button mat-button
+            *ngIf="user.role === 'ADMIN'"
+            routerLink="/admin">
+      Admin
+    </button>
+
+    <button mat-button
+            *ngIf="user.role === 'CUSTOMER'"
+            routerLink="/customer">
+      Customer
+    </button>
+
+    <button mat-button (click)="logout()">
+      Logout
+    </button>
+
+  </ng-container>
+
+  <ng-template #guestLinks>
+    <button mat-button routerLink="/login">Login</button>
+    <button mat-button routerLink="/register">Register</button>
+  </ng-template>
+
+</mat-toolbar>

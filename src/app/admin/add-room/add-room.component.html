@@ -1,1 +1,29 @@
-<p>add-room works!</p>
+<h2>Add Room</h2>
+
+<form [formGroup]="roomForm" (ngSubmit)="addRoom()">
+
+  <select formControlName="branch_id">
+    <option value="">Select Branch</option>
+    <option *ngFor="let branch of branches" [value]="branch.id">
+      {{ branch.branchName }}
+    </option>
+  </select>
+  <small *ngIf="roomForm.controls.branch_id.invalid && roomForm.controls.branch_id.touched">
+    Branch is required
+  </small>
+
+  
+  <input type="number" formControlName="price" placeholder="Price">
+
+  <select formControlName="type">
+    <option value="STANDARD">Standard</option>
+    <option value="DELUXE">Deluxe</option>
+    <option value="SUITE">Suite</option>
+  </select>
+
+  <input type="number" formControlName="totalRoom" placeholder="Total Rooms">
+  <input type="number" formControlName="available" placeholder="Available Rooms">
+
+  <button type="submit">Add Room</button>
+
+</form>
