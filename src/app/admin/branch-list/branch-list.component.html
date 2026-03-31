@@ -1,0 +1,44 @@
+<h2>Branch List</h2>
+
+<table border="1" cellpadding="8">
+
+  <thead>
+    <tr>
+      <th>ID</th>
+      <th>Name</th>
+      <th>City</th>
+      <th>Address</th>
+      <th>Rating</th>
+      <th>Phone</th>
+      <th>Email</th>
+      <th>Hotel ID</th>
+      <th>Hotel Name</th>
+      <th>Actions</th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <tr *ngFor="let branch of branches">
+      <td>{{ branch.id }}</td>
+      <td>{{ branch.branchName }}</td>
+      <td>{{ branch.city }}</td>
+      <td>{{ branch.address }}</td>
+      <td>{{ branch.rating }}</td>
+      <td>{{ branch.phone }}</td>
+      <td>{{ branch.email }}</td>
+      <td>{{ branch.hotelId }}</td>
+      <td>{{ branch.hotelName }}</td>
+
+      <td>
+        <button (click)="editBranch(branch.id)">
+          Edit
+        </button>
+
+        <button (click)="deleteBranch(branch.id)">
+          Delete
+        </button>
+      </td>
+    </tr>
+  </tbody>
+
+</table>

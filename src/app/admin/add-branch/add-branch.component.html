@@ -1,0 +1,23 @@
+<h2>Add Branch</h2>
+
+<form [formGroup]="branchForm" (ngSubmit)="addBranch()">
+
+  <input type="text" formControlName="branchName" placeholder="Branch Name">
+  <input type="text" formControlName="city" placeholder="City">
+  <input type="text" formControlName="address" placeholder="Address">
+  <input type="number" formControlName="rating" placeholder="Add Rating">
+  <input type="text" formControlName="phone" placeholder="Phone">
+  <input type="text" formControlName="imgUrl" placeholder="Image URL">
+  <input type="number" formControlName="hotelId" placeholder="Hotel ID">
+
+  <!-- <select formControlName="hotel_id">
+    <option *ngFor="let hotel of hotels" [value]="hotel.id">
+      {{ hotel.name }}
+    </option>
+  </select> -->
+
+  <input type="email" formControlName="email" placeholder="Email">
+
+  <button type="submit"  >Add Branch</button>
+
+</form>

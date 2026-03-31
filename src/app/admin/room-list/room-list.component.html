@@ -1,0 +1,30 @@
+<h2>All Rooms</h2>
+
+<table border="1">
+  <tr>
+    <th>ID</th>
+    <th>Branch</th>
+    <th>Type</th>
+    <th>Price</th>
+    <th>Total</th>
+    <th>Available</th>
+    <th>Action</th>
+  </tr>
+
+  <tr *ngFor="let room of rooms">
+    <td>{{ room.id }}</td>
+    <td>{{ room.branch_id }}</td>
+    <td>{{ room.type }}</td>
+    <td>{{ room.price }}</td>
+    <td>{{ room.totalRoom }}</td>
+    <td>{{ room.available }}</td>
+    <td>
+      <button (click)="editRoom(room.id)">Edit</button>
+      <button (click)="deleteRoom(room.id)">Delete</button>
+    </td>
+  </tr>
+</table>
+
+<div *ngIf="rooms.length === 0">
+  No rooms available.
+</div>

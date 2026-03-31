@@ -1,0 +1,24 @@
+<h2>Edit Room</h2>
+
+<form [formGroup]="roomForm" (ngSubmit)="updateRoom()">
+
+  <select formControlName="branch_id">
+    <option *ngFor="let branch of branches" [value]="branch.id">
+      {{ branch.branchName }}
+    </option>
+  </select>
+
+  <input type="number" formControlName="price" placeholder="Price">
+
+  <select formControlName="type">
+    <option value="STANDARD">Standard</option>
+    <option value="DELUXE">Deluxe</option>
+    <option value="SUITE">Suite</option>
+  </select>
+
+  <input type="number" formControlName="totalRoom" placeholder="Total Rooms">
+  <input type="number" formControlName="available" placeholder="Available Rooms">
+
+  <button type="submit">Update Room</button>
+
+</form>
