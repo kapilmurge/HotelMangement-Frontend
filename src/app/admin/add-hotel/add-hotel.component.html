@@ -1,0 +1,11 @@
+<h2>Add Hotel</h2>
+
+<form [formGroup]="hotelForm" (ngSubmit)="addHotel()">
+
+  <input type="text" formControlName="name" placeholder="Hotel Name">
+  <input type="text" formControlName="description" placeholder="Description">
+  <input type="email" formControlName="email" placeholder="Email">
+
+  <button type="submit">Add Hotel</button>
+
+</form>

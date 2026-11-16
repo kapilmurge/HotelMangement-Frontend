@@ -1,0 +1,28 @@
+<h2>Available Rooms</h2>
+
+<table border="3">
+  <thead>
+    
+    <tr>
+      <th>Hotel</th>
+      <th>Branch</th>
+      <th>Type</th>
+      <th>Price</th>
+      <th>Available</th>
+      <th>Action</th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <tr *ngFor="let room of rooms">
+      <td>{{ room.hotelName }}</td>
+      <td>{{ room.branchName }}</td>
+      <td>{{ room.type }}</td>
+      <td>{{ room.price }}</td>
+      <td>{{ room.available }}</td>
+      <td>
+        <button (click)="bookRoom(room.id)">Book</button>
+      </td>
+    </tr>
+  </tbody>
+</table>

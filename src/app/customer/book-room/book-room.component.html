@@ -1,0 +1,50 @@
+<div class="booking-card">
+
+  <h2>Book Your Stay</h2>
+
+  
+
+  <form [formGroup]="bookingForm" (ngSubmit)="bookRoom()">
+
+    <div class="form-row">
+      <label>Check In</label>
+      <input type="date"
+             formControlName="checkInDate"
+             [min]="today">
+    </div>
+
+    <div class="form-row">
+      <label>Check Out</label>
+      <input type="date"
+             formControlName="checkOutDate"
+             [min]="today">
+    </div>
+
+    <div *ngIf="bookingForm.controls.checkOutDate.errors?.['invalidRange']"
+         class="error-text">
+      Check-out must be after check-in
+    </div>
+
+    <div class="form-row">
+      <label>Number of Rooms</label>
+      <input type="number"
+             formControlName="numberOfRooms"
+             min="1">
+    </div>
+
+    <div *ngIf="bookingForm.controls.numberOfRooms.errors?.['notEnough']"
+         class="error-text">
+      Not enough rooms available
+    </div>
+
+    <div class="total-box">
+      Total Price: ₹{{ bookingForm.get('price')?.value }}
+    </div>
+
+    <button type="submit" class="book-btn">
+      Confirm Booking
+    </button>
+
+  </form>
+
+</div>

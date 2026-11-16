@@ -1,0 +1,49 @@
+.booking-card {
+  max-width: 500px;
+  margin: 40px auto;
+  padding: 30px;
+  border-radius: 12px;
+  background: white;
+  box-shadow: 0 8px 25px rgba(0,0,0,0.1);
+}
+
+.form-row {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 15px;
+}
+
+.availability-box {
+  background: #e0f2fe;
+  padding: 10px;
+  border-radius: 6px;
+  margin-bottom: 15px;
+  font-weight: 600;
+}
+
+.total-box {
+  margin: 15px 0;
+  font-size: 18px;
+  font-weight: bold;
+}
+
+.error-text {
+  color: red;
+  font-size: 13px;
+  margin-bottom: 10px;
+}
+
+.book-btn {
+  width: 100%;
+  padding: 10px;
+  border-radius: 8px;
+  border: none;
+  background: #1e3a8a;
+  color: white;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.book-btn:hover {
+  background: #2563eb;
+}
